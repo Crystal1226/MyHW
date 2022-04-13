@@ -64,6 +64,12 @@
     <Compile Include="3. FrmProducts.designer.cs">
       <DependentUpon>3. FrmProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="4. FrmDataSet 結構.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4. FrmDataSet 結構.Designer.cs">
+      <DependentUpon>4. FrmDataSet 結構.cs</DependentUpon>
+    </Compile>
     <Compile Include="NWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="3. FrmProducts.resx">
       <DependentUpon>3. FrmProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4. FrmDataSet 結構.resx">
+      <DependentUpon>4. FrmDataSet 結構.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
