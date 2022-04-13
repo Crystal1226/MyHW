@@ -28,6 +28,14 @@ namespace MyHomeWork
                 this.comboBox1.Items.Add(dataReader1["CategoryName"]);
             }
             conn.Close();
+
+            //Disconnected - DataAdapter
+            SqlDataAdapter adapter = new SqlDataAdapter("select CategoryName from Categories", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+
+            this.comboBox2.Items.Add(ds.Tables[0]);
+        
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
