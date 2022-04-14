@@ -34,8 +34,12 @@ namespace MyHomeWork
             DataSet ds = new DataSet();
             adapter.Fill(ds);
 
-            this.comboBox2.Items.Add(ds.Tables[0]);
-        
+            for(int i=0; i<=ds.Tables[0].Rows.Count-1; i++)
+            {
+                this.comboBox2.Items.Add(ds.Tables[0].Rows[i]["CategoryName"]);
+            }
+            // todo disconnected
+
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
