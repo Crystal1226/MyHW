@@ -30,214 +30,162 @@ namespace MyHW
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label cityIDLabel;
-            System.Windows.Forms.Label cityNameLabel;
-            System.Windows.Forms.Label countryLabel;
             System.Windows.Forms.Label introductionLabel;
-            System.Windows.Forms.Label photoLabel;
+            System.Windows.Forms.Label countryLabel;
+            System.Windows.Forms.Label cityNameLabel;
+            System.Windows.Forms.Label cityIDLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label photoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMyAlbum_V1));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cityTableAdapter1 = new MyHW.MyAlbumDataSetTableAdapters.CityTableAdapter();
-            this.photoTableAdapter1 = new MyHW.MyAlbumDataSetTableAdapters.PhotoTableAdapter();
-            this.myAlbumDataSet1 = new MyHW.MyAlbumDataSet();
-            this.panelCity = new System.Windows.Forms.Panel();
-            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new MyHW.MyAlbumDataSetTableAdapters.TableAdapterManager();
-            this.photoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cityIDTextBox = new System.Windows.Forms.TextBox();
-            this.cityNameTextBox = new System.Windows.Forms.TextBox();
-            this.countryTextBox = new System.Windows.Forms.TextBox();
-            this.introductionTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtIntro = new System.Windows.Forms.TextBox();
+            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtCityName = new System.Windows.Forms.TextBox();
+            this.txtCityID = new System.Windows.Forms.TextBox();
             this.photoDataGridView = new System.Windows.Forms.DataGridView();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
-            cityIDLabel = new System.Windows.Forms.Label();
-            cityNameLabel = new System.Windows.Forms.Label();
-            countryLabel = new System.Windows.Forms.Label();
+            this.panelCity = new System.Windows.Forms.Panel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.myAlbumDataSet1 = new MyHW.MyAlbumDataSet();
+            this.cityTableAdapter1 = new MyHW.MyAlbumDataSetTableAdapters.CityTableAdapter();
+            this.photoTableAdapter1 = new MyHW.MyAlbumDataSetTableAdapters.PhotoTableAdapter();
+            this.tableAdapterManager = new MyHW.MyAlbumDataSetTableAdapters.TableAdapterManager();
             introductionLabel = new System.Windows.Forms.Label();
+            countryLabel = new System.Windows.Forms.Label();
+            cityNameLabel = new System.Windows.Forms.Label();
+            cityIDLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.myAlbumDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.photoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myAlbumDataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cityIDLabel
-            // 
-            cityIDLabel.AutoSize = true;
-            cityIDLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cityIDLabel.Location = new System.Drawing.Point(234, 121);
-            cityIDLabel.Name = "cityIDLabel";
-            cityIDLabel.Size = new System.Drawing.Size(63, 15);
-            cityIDLabel.TabIndex = 6;
-            cityIDLabel.Text = "City ID:";
-            // 
-            // cityNameLabel
-            // 
-            cityNameLabel.AutoSize = true;
-            cityNameLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cityNameLabel.Location = new System.Drawing.Point(234, 149);
-            cityNameLabel.Name = "cityNameLabel";
-            cityNameLabel.Size = new System.Drawing.Size(77, 15);
-            cityNameLabel.TabIndex = 8;
-            cityNameLabel.Text = "City Name:";
-            // 
-            // countryLabel
-            // 
-            countryLabel.AutoSize = true;
-            countryLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            countryLabel.Location = new System.Drawing.Point(234, 177);
-            countryLabel.Name = "countryLabel";
-            countryLabel.Size = new System.Drawing.Size(63, 15);
-            countryLabel.TabIndex = 10;
-            countryLabel.Text = "Country:";
-            // 
-            // introductionLabel
-            // 
-            introductionLabel.AutoSize = true;
-            introductionLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            introductionLabel.Location = new System.Drawing.Point(234, 205);
-            introductionLabel.Name = "introductionLabel";
-            introductionLabel.Size = new System.Drawing.Size(98, 15);
-            introductionLabel.TabIndex = 12;
-            introductionLabel.Text = "Introduction:";
-            // 
-            // photoLabel
-            // 
-            photoLabel.AutoSize = true;
-            photoLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            photoLabel.Location = new System.Drawing.Point(522, 122);
-            photoLabel.Name = "photoLabel";
-            photoLabel.Size = new System.Drawing.Size(49, 15);
-            photoLabel.TabIndex = 13;
-            photoLabel.Text = "Photo:";
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(840, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(1119, 545);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 27);
+            this.button1.Size = new System.Drawing.Size(136, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "Tool CRUD";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(133, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(200, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(612, 57);
+            this.label1.Size = new System.Drawing.Size(915, 86);
             this.label1.TabIndex = 3;
             this.label1.Text = "My Album";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cityTableAdapter1
+            // txtIntro
             // 
-            this.cityTableAdapter1.ClearBeforeFill = true;
+            this.txtIntro.Font = new System.Drawing.Font("Consolas", 9.75F);
+            this.txtIntro.Location = new System.Drawing.Point(506, 277);
+            this.txtIntro.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIntro.Name = "txtIntro";
+            this.txtIntro.Size = new System.Drawing.Size(247, 30);
+            this.txtIntro.TabIndex = 13;
             // 
-            // photoTableAdapter1
+            // introductionLabel
             // 
-            this.photoTableAdapter1.ClearBeforeFill = true;
+            introductionLabel.AutoSize = true;
+            introductionLabel.BackColor = System.Drawing.Color.Transparent;
+            introductionLabel.Font = new System.Drawing.Font("Consolas", 9.75F);
+            introductionLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            introductionLabel.Location = new System.Drawing.Point(351, 282);
+            introductionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            introductionLabel.Name = "introductionLabel";
+            introductionLabel.Size = new System.Drawing.Size(153, 23);
+            introductionLabel.TabIndex = 12;
+            introductionLabel.Text = "Introduction:";
             // 
-            // myAlbumDataSet1
+            // txtCountry
             // 
-            this.myAlbumDataSet1.DataSetName = "MyAlbumDataSet";
-            this.myAlbumDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.txtCountry.Font = new System.Drawing.Font("Consolas", 9.75F);
+            this.txtCountry.Location = new System.Drawing.Point(506, 235);
+            this.txtCountry.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(247, 30);
+            this.txtCountry.TabIndex = 11;
             // 
-            // panelCity
+            // countryLabel
             // 
-            this.panelCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCity.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panelCity.Location = new System.Drawing.Point(64, 96);
-            this.panelCity.Name = "panelCity";
-            this.panelCity.Size = new System.Drawing.Size(128, 303);
-            this.panelCity.TabIndex = 6;
+            countryLabel.AutoSize = true;
+            countryLabel.BackColor = System.Drawing.Color.Transparent;
+            countryLabel.Font = new System.Drawing.Font("Consolas", 9.75F);
+            countryLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            countryLabel.Location = new System.Drawing.Point(351, 240);
+            countryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new System.Drawing.Size(98, 23);
+            countryLabel.TabIndex = 10;
+            countryLabel.Text = "Country:";
             // 
-            // cityBindingSource
+            // txtCityName
             // 
-            this.cityBindingSource.DataMember = "City";
-            this.cityBindingSource.DataSource = this.myAlbumDataSet1;
+            this.txtCityName.Font = new System.Drawing.Font("Consolas", 9.75F);
+            this.txtCityName.Location = new System.Drawing.Point(506, 193);
+            this.txtCityName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCityName.Name = "txtCityName";
+            this.txtCityName.Size = new System.Drawing.Size(247, 30);
+            this.txtCityName.TabIndex = 9;
             // 
-            // tableAdapterManager
+            // cityNameLabel
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CityTableAdapter = this.cityTableAdapter1;
-            this.tableAdapterManager.PhotoTableAdapter = this.photoTableAdapter1;
-            this.tableAdapterManager.UpdateOrder = MyHW.MyAlbumDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            cityNameLabel.AutoSize = true;
+            cityNameLabel.BackColor = System.Drawing.Color.Transparent;
+            cityNameLabel.Font = new System.Drawing.Font("Consolas", 9.75F);
+            cityNameLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            cityNameLabel.Location = new System.Drawing.Point(351, 198);
+            cityNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            cityNameLabel.Name = "cityNameLabel";
+            cityNameLabel.Size = new System.Drawing.Size(120, 23);
+            cityNameLabel.TabIndex = 8;
+            cityNameLabel.Text = "City Name:";
             // 
-            // photoBindingSource
+            // txtCityID
             // 
-            this.photoBindingSource.DataMember = "Photo";
-            this.photoBindingSource.DataSource = this.myAlbumDataSet1;
+            this.txtCityID.Font = new System.Drawing.Font("Consolas", 9.75F);
+            this.txtCityID.Location = new System.Drawing.Point(506, 151);
+            this.txtCityID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCityID.Name = "txtCityID";
+            this.txtCityID.Size = new System.Drawing.Size(247, 30);
+            this.txtCityID.TabIndex = 7;
             // 
-            // cityIDTextBox
+            // cityIDLabel
             // 
-            this.cityIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityID", true));
-            this.cityIDTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityIDTextBox.Location = new System.Drawing.Point(337, 118);
-            this.cityIDTextBox.Name = "cityIDTextBox";
-            this.cityIDTextBox.Size = new System.Drawing.Size(166, 23);
-            this.cityIDTextBox.TabIndex = 7;
-            // 
-            // cityNameTextBox
-            // 
-            this.cityNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "CityName", true));
-            this.cityNameTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityNameTextBox.Location = new System.Drawing.Point(337, 146);
-            this.cityNameTextBox.Name = "cityNameTextBox";
-            this.cityNameTextBox.Size = new System.Drawing.Size(166, 23);
-            this.cityNameTextBox.TabIndex = 9;
-            // 
-            // countryTextBox
-            // 
-            this.countryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "Country", true));
-            this.countryTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countryTextBox.Location = new System.Drawing.Point(337, 174);
-            this.countryTextBox.Name = "countryTextBox";
-            this.countryTextBox.Size = new System.Drawing.Size(166, 23);
-            this.countryTextBox.TabIndex = 11;
-            // 
-            // introductionTextBox
-            // 
-            this.introductionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cityBindingSource, "Introduction", true));
-            this.introductionTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.introductionTextBox.Location = new System.Drawing.Point(337, 202);
-            this.introductionTextBox.Name = "introductionTextBox";
-            this.introductionTextBox.Size = new System.Drawing.Size(166, 23);
-            this.introductionTextBox.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CityID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CityID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Photo";
-            this.dataGridViewImageColumn1.HeaderText = "Photo";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PhotoID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "PhotoID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            cityIDLabel.AutoSize = true;
+            cityIDLabel.BackColor = System.Drawing.Color.Transparent;
+            cityIDLabel.Font = new System.Drawing.Font("Consolas", 9.75F);
+            cityIDLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            cityIDLabel.Location = new System.Drawing.Point(351, 156);
+            cityIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            cityIDLabel.Name = "cityIDLabel";
+            cityIDLabel.Size = new System.Drawing.Size(98, 23);
+            cityIDLabel.TabIndex = 6;
+            cityIDLabel.Text = "City ID:";
             // 
             // photoDataGridView
             // 
-            this.photoDataGridView.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -247,54 +195,117 @@ namespace MyHW
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.photoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.photoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.photoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.photoDataGridView.DataSource = this.photoBindingSource;
-            this.photoDataGridView.Location = new System.Drawing.Point(237, 248);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.photoDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.photoDataGridView.Location = new System.Drawing.Point(334, 330);
+            this.photoDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.photoDataGridView.Name = "photoDataGridView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.photoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.photoDataGridView.RowHeadersWidth = 62;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.photoDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.photoDataGridView.RowTemplate.Height = 24;
-            this.photoDataGridView.Size = new System.Drawing.Size(316, 151);
+            this.photoDataGridView.Size = new System.Drawing.Size(474, 268);
             this.photoDataGridView.TabIndex = 13;
             // 
             // photoPictureBox
             // 
-            this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.photoBindingSource, "Photo", true));
-            this.photoPictureBox.Location = new System.Drawing.Point(586, 122);
+            this.photoPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.photoPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.photoPictureBox.Location = new System.Drawing.Point(840, 198);
+            this.photoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.photoPictureBox.Name = "photoPictureBox";
-            this.photoPictureBox.Size = new System.Drawing.Size(274, 253);
+            this.photoPictureBox.Size = new System.Drawing.Size(415, 317);
             this.photoPictureBox.TabIndex = 14;
             this.photoPictureBox.TabStop = false;
             // 
+            // photoLabel
+            // 
+            photoLabel.AutoSize = true;
+            photoLabel.BackColor = System.Drawing.Color.Transparent;
+            photoLabel.Font = new System.Drawing.Font("Consolas", 9.75F);
+            photoLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            photoLabel.Location = new System.Drawing.Point(836, 167);
+            photoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            photoLabel.Name = "photoLabel";
+            photoLabel.Size = new System.Drawing.Size(76, 23);
+            photoLabel.TabIndex = 13;
+            photoLabel.Text = "Photo:";
+            // 
+            // panelCity
+            // 
+            this.panelCity.BackColor = System.Drawing.Color.Transparent;
+            this.panelCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCity.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCity.Location = new System.Drawing.Point(96, 144);
+            this.panelCity.Margin = new System.Windows.Forms.Padding(4);
+            this.panelCity.Name = "panelCity";
+            this.panelCity.Size = new System.Drawing.Size(191, 454);
+            this.panelCity.TabIndex = 6;
+            // 
+            // myAlbumDataSet1
+            // 
+            this.myAlbumDataSet1.DataSetName = "MyAlbumDataSet";
+            this.myAlbumDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cityTableAdapter1
+            // 
+            this.cityTableAdapter1.ClearBeforeFill = true;
+            // 
+            // photoTableAdapter1
+            // 
+            this.photoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CityTableAdapter = this.cityTableAdapter1;
+            this.tableAdapterManager.PhotoTableAdapter = this.photoTableAdapter1;
+            this.tableAdapterManager.UpdateOrder = MyHW.MyAlbumDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // FrmMyAlbum_V1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(921, 465);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1379, 684);
             this.Controls.Add(photoLabel);
             this.Controls.Add(this.photoPictureBox);
             this.Controls.Add(this.photoDataGridView);
             this.Controls.Add(cityIDLabel);
-            this.Controls.Add(this.cityIDTextBox);
+            this.Controls.Add(this.txtCityID);
             this.Controls.Add(cityNameLabel);
-            this.Controls.Add(this.cityNameTextBox);
+            this.Controls.Add(this.txtCityName);
             this.Controls.Add(countryLabel);
-            this.Controls.Add(this.countryTextBox);
+            this.Controls.Add(this.txtCountry);
             this.Controls.Add(introductionLabel);
-            this.Controls.Add(this.introductionTextBox);
-            this.Controls.Add(this.panelCity);
+            this.Controls.Add(this.txtIntro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.panelCity);
             this.Name = "FrmMyAlbum_V1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "FrmMyAlbum_V1";
-            ((System.ComponentModel.ISupportInitialize)(this.myAlbumDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.photoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myAlbumDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,18 +318,15 @@ namespace MyHW
         private MyAlbumDataSetTableAdapters.CityTableAdapter cityTableAdapter1;
         private MyAlbumDataSetTableAdapters.PhotoTableAdapter photoTableAdapter1;
         private MyAlbumDataSet myAlbumDataSet1;
-        private System.Windows.Forms.Panel panelCity;
-        private System.Windows.Forms.BindingSource cityBindingSource;
         private MyAlbumDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource photoBindingSource;
-        private System.Windows.Forms.TextBox cityIDTextBox;
-        private System.Windows.Forms.TextBox cityNameTextBox;
-        private System.Windows.Forms.TextBox countryTextBox;
-        private System.Windows.Forms.TextBox introductionTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TextBox txtIntro;
+        private System.Windows.Forms.TextBox txtCountry;
+        private System.Windows.Forms.TextBox txtCityName;
+        private System.Windows.Forms.TextBox txtCityID;
         private System.Windows.Forms.DataGridView photoDataGridView;
         private System.Windows.Forms.PictureBox photoPictureBox;
+        private System.Windows.Forms.Panel panelCity;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

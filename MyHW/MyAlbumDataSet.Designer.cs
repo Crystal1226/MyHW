@@ -232,14 +232,6 @@ namespace MyHW {
             base.Tables.Add(this.tableCity);
             this.tablePhoto = new PhotoDataTable();
             base.Tables.Add(this.tablePhoto);
-            global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_City_Photo", new global::System.Data.DataColumn[] {
-                        this.tableCity.CityIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePhoto.CityIDColumn});
-            this.tablePhoto.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -493,9 +485,7 @@ namespace MyHW {
                 this.columnCityID.AllowDBNull = false;
                 this.columnCityID.ReadOnly = true;
                 this.columnCityID.Unique = true;
-                this.columnCityName.AllowDBNull = false;
                 this.columnCityName.MaxLength = 50;
-                this.columnCountry.AllowDBNull = false;
                 this.columnCountry.MaxLength = 50;
                 this.columnIntroduction.MaxLength = 50;
             }
@@ -731,15 +721,22 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PhotoRow AddPhotoRow(byte[] Photo, int CityID) {
+            public PhotoRow AddPhotoRow(int PhotoID, byte[] Photo, int CityID) {
                 PhotoRow rowPhotoRow = ((PhotoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        PhotoID,
                         Photo,
                         CityID};
                 rowPhotoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPhotoRow);
                 return rowPhotoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PhotoRow FindByPhotoID(int PhotoID) {
+                return ((PhotoRow)(this.Rows.Find(new object[] {
+                            PhotoID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -773,13 +770,10 @@ namespace MyHW {
                 base.Columns.Add(this.columnPhoto);
                 this.columnCityID = new global::System.Data.DataColumn("CityID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCityID);
-                this.columnPhotoID.AutoIncrement = true;
-                this.columnPhotoID.AutoIncrementSeed = -1;
-                this.columnPhotoID.AutoIncrementStep = -1;
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnPhotoID}, true));
                 this.columnPhotoID.AllowDBNull = false;
-                this.columnPhotoID.ReadOnly = true;
-                this.columnPhoto.AllowDBNull = false;
-                this.columnCityID.AllowDBNull = false;
+                this.columnPhotoID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -935,7 +929,12 @@ namespace MyHW {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string CityName {
                 get {
-                    return ((string)(this[this.tableCity.CityNameColumn]));
+                    try {
+                        return ((string)(this[this.tableCity.CityNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'City\' 中資料行 \'CityName\' 的值是 DBNull。", e);
+                    }
                 }
                 set {
                     this[this.tableCity.CityNameColumn] = value;
@@ -946,7 +945,12 @@ namespace MyHW {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Country {
                 get {
-                    return ((string)(this[this.tableCity.CountryColumn]));
+                    try {
+                        return ((string)(this[this.tableCity.CountryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'City\' 中資料行 \'Country\' 的值是 DBNull。", e);
+                    }
                 }
                 set {
                     this[this.tableCity.CountryColumn] = value;
@@ -967,6 +971,30 @@ namespace MyHW {
                 set {
                     this[this.tableCity.IntroductionColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCityNameNull() {
+                return this.IsNull(this.tableCity.CityNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCityNameNull() {
+                this[this.tableCity.CityNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCountryNull() {
+                return this.IsNull(this.tableCity.CountryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCountryNull() {
+                this[this.tableCity.CountryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1011,7 +1039,12 @@ namespace MyHW {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public byte[] Photo {
                 get {
-                    return ((byte[])(this[this.tablePhoto.PhotoColumn]));
+                    try {
+                        return ((byte[])(this[this.tablePhoto.PhotoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'Photo\' 中資料行 \'Photo\' 的值是 DBNull。", e);
+                    }
                 }
                 set {
                     this[this.tablePhoto.PhotoColumn] = value;
@@ -1022,11 +1055,40 @@ namespace MyHW {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int CityID {
                 get {
-                    return ((int)(this[this.tablePhoto.CityIDColumn]));
+                    try {
+                        return ((int)(this[this.tablePhoto.CityIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'Photo\' 中資料行 \'CityID\' 的值是 DBNull。", e);
+                    }
                 }
                 set {
                     this[this.tablePhoto.CityIDColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPhotoNull() {
+                return this.IsNull(this.tablePhoto.PhotoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPhotoNull() {
+                this[this.tablePhoto.PhotoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCityIDNull() {
+                return this.IsNull(this.tablePhoto.CityIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCityIDNull() {
+                this[this.tablePhoto.CityIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1230,13 +1292,12 @@ namespace MyHW.MyAlbumDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[City] WHERE (([CityID] = @Original_CityID) AND ([CityName] = @" +
-                "Original_CityName) AND ([Country] = @Original_Country) AND ((@IsNull_Introductio" +
-                "n = 1 AND [Introduction] IS NULL) OR ([Introduction] = @Original_Introduction)))" +
-                "";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[City] WHERE (([CityID] = @Original_CityID) AND ((@IsNull_CityName = 1 AND [CityName] IS NULL) OR ([CityName] = @Original_CityName)) AND ((@IsNull_Country = 1 AND [Country] IS NULL) OR ([Country] = @Original_Country)) AND ((@IsNull_Introduction = 1 AND [Introduction] IS NULL) OR ([Introduction] = @Original_Introduction)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CityName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Country", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Country", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Introduction", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Introduction", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Introduction", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Introduction", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1251,14 +1312,16 @@ namespace MyHW.MyAlbumDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Introduction", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Introduction", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[City] SET [CityName] = @CityName, [Country] = @Country, [Introduction] = @Introduction WHERE (([CityID] = @Original_CityID) AND ([CityName] = @Original_CityName) AND ([Country] = @Original_Country) AND ((@IsNull_Introduction = 1 AND [Introduction] IS NULL) OR ([Introduction] = @Original_Introduction)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[City] SET [CityName] = @CityName, [Country] = @Country, [Introduction] = @Introduction WHERE (([CityID] = @Original_CityID) AND ((@IsNull_CityName = 1 AND [CityName] IS NULL) OR ([CityName] = @Original_CityName)) AND ((@IsNull_Country = 1 AND [Country] IS NULL) OR ([Country] = @Original_Country)) AND ((@IsNull_Introduction = 1 AND [Introduction] IS NULL) OR ([Introduction] = @Original_Introduction)));
 SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Country", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Introduction", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Introduction", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CityName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Country", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Country", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Introduction", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Introduction", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Introduction", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Introduction", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1275,11 +1338,16 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT CityID, CityName, Country, Introduction FROM dbo.City";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "select*from City where CityName=@City";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1301,6 +1369,42 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual MyAlbumDataSet.CityDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            MyAlbumDataSet.CityDataTable dataTable = new MyAlbumDataSet.CityDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCity2(MyAlbumDataSet.CityDataTable dataTable, string City) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((City == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(City));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual MyAlbumDataSet.CityDataTable GetDataBy(string City) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((City == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(City));
+            }
             MyAlbumDataSet.CityDataTable dataTable = new MyAlbumDataSet.CityDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1342,24 +1446,28 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         public virtual int Delete(int Original_CityID, string Original_CityName, string Original_Country, string Original_Introduction) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CityID));
             if ((Original_CityName == null)) {
-                throw new global::System.ArgumentNullException("Original_CityName");
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_CityName));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_CityName));
             }
             if ((Original_Country == null)) {
-                throw new global::System.ArgumentNullException("Original_Country");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Country));
-            }
-            if ((Original_Introduction == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Introduction));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Country));
+            }
+            if ((Original_Introduction == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Introduction));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1383,13 +1491,13 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string CityName, string Country, string Introduction) {
             if ((CityName == null)) {
-                throw new global::System.ArgumentNullException("CityName");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CityName));
             }
             if ((Country == null)) {
-                throw new global::System.ArgumentNullException("Country");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Country));
@@ -1422,13 +1530,13 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string CityName, string Country, string Introduction, int Original_CityID, string Original_CityName, string Original_Country, string Original_Introduction, int CityID) {
             if ((CityName == null)) {
-                throw new global::System.ArgumentNullException("CityName");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CityName));
             }
             if ((Country == null)) {
-                throw new global::System.ArgumentNullException("Country");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Country));
@@ -1441,26 +1549,30 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_CityID));
             if ((Original_CityName == null)) {
-                throw new global::System.ArgumentNullException("Original_CityName");
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_CityName));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_CityName));
             }
             if ((Original_Country == null)) {
-                throw new global::System.ArgumentNullException("Original_Country");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Country));
-            }
-            if ((Original_Introduction == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Introduction));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Country));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(CityID));
+            if ((Original_Introduction == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Introduction));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(CityID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1613,8 +1725,10 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Photo] ([Photo], [CityID]) VALUES (@Photo, @CityID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Photo] ([PhotoID], [Photo], [CityID]) VALUES (@PhotoID, @Photo" +
+                ", @CityID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhotoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhotoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photo", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1629,11 +1743,16 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PhotoID, Photo, CityID FROM dbo.Photo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "select*from City as c Join Photo as p on  c.CityID=p.CityID where CityName=@City";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1655,6 +1774,42 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual MyAlbumDataSet.PhotoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            MyAlbumDataSet.PhotoDataTable dataTable = new MyAlbumDataSet.PhotoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCity(MyAlbumDataSet.PhotoDataTable dataTable, string City) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((City == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(City));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual MyAlbumDataSet.PhotoDataTable GetDataBy(string City) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((City == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(City));
+            }
             MyAlbumDataSet.PhotoDataTable dataTable = new MyAlbumDataSet.PhotoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1693,14 +1848,20 @@ SELECT CityID, CityName, Country, Introduction FROM City WHERE (CityID = @CityID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(byte[] Photo, int CityID) {
+        public virtual int Insert(int PhotoID, byte[] Photo, global::System.Nullable<int> CityID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PhotoID));
             if ((Photo == null)) {
-                throw new global::System.ArgumentNullException("Photo");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((byte[])(Photo));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(Photo));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CityID));
+            if ((CityID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(CityID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

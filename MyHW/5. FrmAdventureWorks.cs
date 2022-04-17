@@ -34,12 +34,12 @@ namespace MyHomeWork
             this.productPhotoTableAdapter1.FillByYear(this.awDataSet1.ProductPhoto, date);
             this.dataGridView1.DataSource = this.awDataSet1.ProductPhoto;
 
-            //SqlConnection conn1 = new SqlConnection("Data Source=.;Initial Catalog=AdventureWorks;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=AdventureWorks;Integrated Security=True");
             //string connString = $"SELECT * FROM Production.ProductPhoto where Year(ModifiedDate)='{comboBox1.Text}'";
-            //SqlDataAdapter adapter = new SqlDataAdapter(connString,conn1);
-            //DataSet ds1 = new DataSet();
-            //adapter.Fill(ds1);
-            //this.dataGridView1.DataSource = ds1.Tables[0];
+            //SqlDataAdapter adapter = new SqlDataAdapter(connString, conn);
+            //DataSet ds = new DataSet();
+            //adapter.Fill(ds);
+            //this.dataGridView1.DataSource = ds.Tables[0];
 
             this.bindingSource1.DataSource = this.awDataSet1.ProductPhoto;
             this.dataGridView1.DataSource = this.bindingSource1;
