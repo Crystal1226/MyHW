@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SortOrder = System.Data.SqlClient.SortOrder;
+using SortOrder = System.Windows.Forms.SortOrder;
 
 namespace MyHW
 {
@@ -34,6 +34,7 @@ namespace MyHW
                     SqlCommand command = new SqlCommand("select distinct Country from Customers",conn);                  
                     conn.Open();
                     SqlDataReader dataReader = command.ExecuteReader();
+                    this.comboBox1.Items.Add("All Country");
                     while (dataReader.Read())
                     {
                         for (int i = 0; i <= dataReader.FieldCount - 1; i++)
@@ -42,7 +43,6 @@ namespace MyHW
                         }
                         this.comboBox1.Text = "Select Country";
                     }
-                    this.comboBox1.Items.Add("All Country");
                 }
             }
             catch (Exception ex)
@@ -184,12 +184,13 @@ namespace MyHW
         private void customerIDAscToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Order by CustomerID Asc
-           
+            listView1.Sorting = SortOrder.Ascending;
         }
 
         private void customerIDDescToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Order by CustomerID Desc
+            listView1.Sorting = SortOrder.Descending;
         }
 
         private void countryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -201,8 +202,6 @@ namespace MyHW
     }
 }
 
-
-        
 
         //TODO HW
 

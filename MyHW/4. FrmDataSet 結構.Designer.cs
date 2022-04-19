@@ -72,21 +72,23 @@ namespace MyHW
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.splitContainer1.Panel1.Controls.Add(this.btnLoad);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(933, 496);
-            this.splitContainer1.SplitterDistance = 104;
+            this.splitContainer1.Size = new System.Drawing.Size(1100, 537);
+            this.splitContainer1.SplitterDistance = 108;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(10, 12);
+            this.btnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoad.Location = new System.Drawing.Point(13, 12);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(84, 60);
+            this.btnLoad.Size = new System.Drawing.Size(86, 60);
             this.btnLoad.TabIndex = 0;
             this.btnLoad.Text = "Load Data";
             this.btnLoad.UseVisualStyleBackColor = true;
@@ -106,8 +108,8 @@ namespace MyHW
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.listBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(824, 496);
-            this.splitContainer2.SplitterDistance = 193;
+            this.splitContainer2.Size = new System.Drawing.Size(987, 537);
+            this.splitContainer2.SplitterDistance = 208;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -124,20 +126,21 @@ namespace MyHW
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(824, 193);
-            this.splitContainer3.SplitterDistance = 273;
+            this.splitContainer3.Size = new System.Drawing.Size(987, 208);
+            this.splitContainer3.SplitterDistance = 327;
             this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(273, 193);
+            this.dataGridView1.Size = new System.Drawing.Size(327, 208);
             this.dataGridView1.TabIndex = 0;
             // 
             // splitContainer4
@@ -153,31 +156,33 @@ namespace MyHW
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.dataGridView3);
-            this.splitContainer4.Size = new System.Drawing.Size(546, 193);
-            this.splitContainer4.SplitterDistance = 264;
+            this.splitContainer4.Size = new System.Drawing.Size(655, 208);
+            this.splitContainer4.SplitterDistance = 316;
             this.splitContainer4.SplitterWidth = 5;
             this.splitContainer4.TabIndex = 0;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(264, 193);
+            this.dataGridView2.Size = new System.Drawing.Size(316, 208);
             this.dataGridView2.TabIndex = 0;
             // 
             // dataGridView3
             // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(277, 193);
+            this.dataGridView3.Size = new System.Drawing.Size(334, 208);
             this.dataGridView3.TabIndex = 0;
             // 
             // listBox1
@@ -188,7 +193,7 @@ namespace MyHW
             this.listBox1.ItemHeight = 22;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(824, 298);
+            this.listBox1.Size = new System.Drawing.Size(987, 324);
             this.listBox1.TabIndex = 0;
             // 
             // categoriesTableAdapter1
@@ -212,7 +217,7 @@ namespace MyHW
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 496);
+            this.ClientSize = new System.Drawing.Size(1100, 537);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmDataSet_結構";

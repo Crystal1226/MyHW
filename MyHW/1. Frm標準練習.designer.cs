@@ -161,10 +161,10 @@ namespace WindowsFormsApp1
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.BackColor = System.Drawing.Color.Ivory;
+            this.lblResult.BackColor = System.Drawing.Color.AliceBlue;
             this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResult.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblResult.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblResult.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblResult.Location = new System.Drawing.Point(384, 262);
             this.lblResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResult.Name = "lblResult";
@@ -186,7 +186,7 @@ namespace WindowsFormsApp1
             // 
             // btnDo
             // 
-            this.btnDo.BackColor = System.Drawing.Color.OldLace;
+            this.btnDo.BackColor = System.Drawing.Color.Azure;
             this.btnDo.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDo.Location = new System.Drawing.Point(480, 162);
             this.btnDo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -199,7 +199,7 @@ namespace WindowsFormsApp1
             // 
             // btnWhile
             // 
-            this.btnWhile.BackColor = System.Drawing.Color.OldLace;
+            this.btnWhile.BackColor = System.Drawing.Color.Azure;
             this.btnWhile.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnWhile.Location = new System.Drawing.Point(480, 109);
             this.btnWhile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,7 +212,7 @@ namespace WindowsFormsApp1
             // 
             // btnFor
             // 
-            this.btnFor.BackColor = System.Drawing.Color.OldLace;
+            this.btnFor.BackColor = System.Drawing.Color.Azure;
             this.btnFor.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFor.Location = new System.Drawing.Point(480, 56);
             this.btnFor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -226,7 +226,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.OldLace;
+            this.label3.BackColor = System.Drawing.Color.Azure;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.Location = new System.Drawing.Point(267, 166);
             this.label3.Name = "label3";
@@ -237,7 +237,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.OldLace;
+            this.label2.BackColor = System.Drawing.Color.Azure;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(284, 111);
             this.label2.Name = "label2";
@@ -248,7 +248,7 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.OldLace;
+            this.label1.BackColor = System.Drawing.Color.Azure;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(270, 56);
             this.label1.Name = "label1";
@@ -258,7 +258,7 @@ namespace WindowsFormsApp1
             // 
             // txtStep
             // 
-            this.txtStep.BackColor = System.Drawing.Color.OldLace;
+            this.txtStep.BackColor = System.Drawing.Color.Azure;
             this.txtStep.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtStep.Location = new System.Drawing.Point(345, 162);
             this.txtStep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -268,7 +268,7 @@ namespace WindowsFormsApp1
             // 
             // txtTo
             // 
-            this.txtTo.BackColor = System.Drawing.Color.OldLace;
+            this.txtTo.BackColor = System.Drawing.Color.Azure;
             this.txtTo.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtTo.Location = new System.Drawing.Point(345, 109);
             this.txtTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -278,7 +278,7 @@ namespace WindowsFormsApp1
             // 
             // txtFrom
             // 
-            this.txtFrom.BackColor = System.Drawing.Color.OldLace;
+            this.txtFrom.BackColor = System.Drawing.Color.Azure;
             this.txtFrom.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtFrom.Location = new System.Drawing.Point(345, 56);
             this.txtFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -351,6 +351,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1523, 491);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.label7);

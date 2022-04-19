@@ -18,13 +18,10 @@ namespace MyHW
             InitializeComponent();
             try
             {
-                //Photo binding
                 this.bindingSource1.DataSource = myAlbumDataSet1.Photo;
-                this.photoDataGridView.DataSource = this.bindingSource1;
-
-                //City binding
                 this.bindingSource2.DataSource = myAlbumDataSet1.City;
                 
+                //動態建立LinkLabel
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = @"(LocalDB)\MSSQLLocalDB";
                 builder.AttachDBFilename = Application.StartupPath + @"\MyAlbum.mdf";
@@ -68,9 +65,6 @@ namespace MyHW
                     conn.Open();
                     this.photoTableAdapter1.FillByCity(myAlbumDataSet1.Photo,x.Text);
                     photoDataGridView.DataSource = myAlbumDataSet1.Photo;
-                    
-                    this.photoPictureBox.DataBindings.Add("Image", this.bindingSource1, "Photo", true);
-                    this.photoPictureBox.DataBindings.Clear();
                 }
                 using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
                 {
@@ -79,14 +73,11 @@ namespace MyHW
                     txtCityID.DataBindings.Add("Text",bindingSource2, "CityID");
                     txtCityName.DataBindings.Add("Text", bindingSource2, "CityName");
                     txtCountry.DataBindings.Add("Text", bindingSource2, "Country");
-                    txtIntro.DataBindings.Add("Text", bindingSource2, "Introduction");
 
                     txtCityID.DataBindings.Clear();
                     txtCityName.DataBindings.Clear();
                     txtCountry.DataBindings.Clear();
-                    txtIntro.DataBindings.Clear();
                 }
-
             }
             catch (Exception ex)
             {

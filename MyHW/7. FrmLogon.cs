@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using MyHW.Properties;
 using MyHW;
+using System.Web.Security;
 
 namespace MyHomeWork
 {
@@ -27,6 +28,7 @@ namespace MyHomeWork
             {
                 string UserName = txtUsername.Text;
                 string Password = txtPassword.Text;
+                Password = FormsAuthentication.HashPasswordForStoringInConfigFile("password", "sha1");
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     SqlCommand command = new SqlCommand();

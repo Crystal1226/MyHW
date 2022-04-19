@@ -48,10 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System">
       <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,6 +101,12 @@
     <Compile Include="6. FrmMyAlbum_V1.designer.cs">
       <DependentUpon>6. FrmMyAlbum_V1.cs</DependentUpon>
     </Compile>
+    <Compile Include="6. FrmMyAlbum_V2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6. FrmMyAlbum_V2.designer.cs">
+      <DependentUpon>6. FrmMyAlbum_V2.cs</DependentUpon>
+    </Compile>
     <Compile Include="7. FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,12 +129,6 @@
     </Compile>
     <Compile Include="6. FrmToolCRUD.Designer.cs">
       <DependentUpon>6. FrmToolCRUD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmImageFlags.cs">
       <SubType>Form</SubType>
@@ -177,6 +179,9 @@
     <EmbeddedResource Include="6. FrmMyAlbum_V1.resx">
       <DependentUpon>6. FrmMyAlbum_V1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="6. FrmMyAlbum_V2.resx">
+      <DependentUpon>6. FrmMyAlbum_V2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="6. FrmToolCRUD.resx">
       <DependentUpon>6. FrmToolCRUD.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +205,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AWDataSet.xsc">
       <DependentUpon>AWDataSet.xsd</DependentUpon>
@@ -261,12 +267,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyAlbum.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MyAlbum_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>MyAlbum.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\beach_5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

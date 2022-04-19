@@ -73,9 +73,9 @@ namespace MyHW
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.HideSelection = false;
             this.listView1.LargeImageList = this.ImageList2;
-            this.listView1.Location = new System.Drawing.Point(0, 75);
+            this.listView1.Location = new System.Drawing.Point(0, 78);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(881, 412);
+            this.listView1.Size = new System.Drawing.Size(1002, 459);
             this.listView1.SmallImageList = this.ImageList1;
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -210,7 +210,7 @@ namespace MyHW
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 487);
+            this.ClientSize = new System.Drawing.Size(1002, 537);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);

@@ -31,9 +31,9 @@ namespace MyHomeWork
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducts));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.btnUnitPrice = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,20 +75,18 @@ namespace MyHomeWork
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(173, 31);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(260, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 14);
+            this.label5.Size = new System.Drawing.Size(110, 22);
             this.label5.TabIndex = 30;
             this.label5.Text = "UnitPrice:";
             // 
             // btnUnitPrice
             // 
             this.btnUnitPrice.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnitPrice.Location = new System.Drawing.Point(456, 23);
-            this.btnUnitPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUnitPrice.Location = new System.Drawing.Point(684, 34);
             this.btnUnitPrice.Name = "btnUnitPrice";
-            this.btnUnitPrice.Size = new System.Drawing.Size(70, 20);
+            this.btnUnitPrice.Size = new System.Drawing.Size(105, 30);
             this.btnUnitPrice.TabIndex = 29;
             this.btnUnitPrice.Text = "Search";
             this.btnUnitPrice.UseVisualStyleBackColor = true;
@@ -98,49 +96,44 @@ namespace MyHomeWork
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 29);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(504, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 14);
+            this.label4.Size = new System.Drawing.Size(20, 22);
             this.label4.TabIndex = 28;
             this.label4.Text = "~";
             // 
             // txtPriceTop
             // 
             this.txtPriceTop.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriceTop.Location = new System.Drawing.Point(366, 24);
-            this.txtPriceTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPriceTop.Location = new System.Drawing.Point(549, 36);
             this.txtPriceTop.Name = "txtPriceTop";
-            this.txtPriceTop.Size = new System.Drawing.Size(68, 22);
+            this.txtPriceTop.Size = new System.Drawing.Size(100, 29);
             this.txtPriceTop.TabIndex = 27;
             // 
             // txtPriceBottom
             // 
             this.txtPriceBottom.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriceBottom.Location = new System.Drawing.Point(255, 25);
-            this.txtPriceBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPriceBottom.Location = new System.Drawing.Point(382, 38);
             this.txtPriceBottom.Name = "txtPriceBottom";
-            this.txtPriceBottom.Size = new System.Drawing.Size(68, 22);
+            this.txtPriceBottom.Size = new System.Drawing.Size(100, 29);
             this.txtPriceBottom.TabIndex = 26;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(155, 63);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(232, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 14);
+            this.label1.Size = new System.Drawing.Size(130, 22);
             this.label1.TabIndex = 32;
             this.label1.Text = "ProductName:";
             // 
             // txtProductName
             // 
             this.txtProductName.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductName.Location = new System.Drawing.Point(255, 57);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductName.Location = new System.Drawing.Point(382, 86);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(179, 22);
+            this.txtProductName.Size = new System.Drawing.Size(266, 29);
             this.txtProductName.TabIndex = 34;
             // 
             // bindingNavigator1
@@ -163,14 +156,15 @@ namespace MyHomeWork
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(361, 104);
+            this.bindingNavigator1.Location = new System.Drawing.Point(549, 160);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(262, 31);
+            this.bindingNavigator1.Size = new System.Drawing.Size(335, 33);
             this.bindingNavigator1.TabIndex = 40;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -180,13 +174,13 @@ namespace MyHomeWork
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "加入新的";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(40, 28);
             this.bindingNavigatorCountItem.Text = "/{0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目總數";
             // 
@@ -196,7 +190,7 @@ namespace MyHomeWork
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorDeleteItem.Text = "刪除";
             // 
             // bindingNavigatorMoveFirstItem
@@ -205,7 +199,7 @@ namespace MyHomeWork
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
             // 
             // bindingNavigatorMovePreviousItem
@@ -214,28 +208,27 @@ namespace MyHomeWork
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 30);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "目前的位置";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -243,7 +236,7 @@ namespace MyHomeWork
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "移到下一個";
             // 
             // bindingNavigatorMoveLastItem
@@ -252,32 +245,30 @@ namespace MyHomeWork
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "移到最後面";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // lblPosition
             // 
             this.lblPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPosition.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(170, 98);
-            this.lblPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPosition.Location = new System.Drawing.Point(255, 147);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(80, 38);
+            this.lblPosition.Size = new System.Drawing.Size(119, 56);
             this.lblPosition.TabIndex = 39;
             this.lblPosition.Text = "1/79";
             this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnEnd
             // 
-            this.btnEnd.Location = new System.Drawing.Point(304, 98);
-            this.btnEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnd.Location = new System.Drawing.Point(456, 147);
             this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(46, 37);
+            this.btnEnd.Size = new System.Drawing.Size(69, 56);
             this.btnEnd.TabIndex = 38;
             this.btnEnd.Text = ">>";
             this.btnEnd.UseVisualStyleBackColor = true;
@@ -285,10 +276,9 @@ namespace MyHomeWork
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(254, 98);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNext.Location = new System.Drawing.Point(381, 147);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(46, 37);
+            this.btnNext.Size = new System.Drawing.Size(69, 56);
             this.btnNext.TabIndex = 37;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -296,10 +286,9 @@ namespace MyHomeWork
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(120, 98);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrevious.Location = new System.Drawing.Point(180, 147);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(46, 37);
+            this.btnPrevious.Size = new System.Drawing.Size(69, 56);
             this.btnPrevious.TabIndex = 36;
             this.btnPrevious.Text = "<";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -307,10 +296,9 @@ namespace MyHomeWork
             // 
             // btnTop
             // 
-            this.btnTop.Location = new System.Drawing.Point(70, 98);
-            this.btnTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTop.Location = new System.Drawing.Point(105, 147);
             this.btnTop.Name = "btnTop";
-            this.btnTop.Size = new System.Drawing.Size(46, 37);
+            this.btnTop.Size = new System.Drawing.Size(69, 56);
             this.btnTop.TabIndex = 35;
             this.btnTop.Text = "<<";
             this.btnTop.UseVisualStyleBackColor = true;
@@ -318,46 +306,48 @@ namespace MyHomeWork
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle23;
-            this.dataGridView1.Location = new System.Drawing.Point(64, 151);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(42, 226);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(590, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(1017, 284);
             this.dataGridView1.TabIndex = 41;
             // 
             // btnProductName
             // 
             this.btnProductName.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductName.Location = new System.Drawing.Point(456, 57);
-            this.btnProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProductName.Location = new System.Drawing.Point(684, 86);
             this.btnProductName.Name = "btnProductName";
-            this.btnProductName.Size = new System.Drawing.Size(70, 20);
+            this.btnProductName.Size = new System.Drawing.Size(105, 30);
             this.btnProductName.TabIndex = 42;
             this.btnProductName.Text = "Search";
             this.btnProductName.UseVisualStyleBackColor = true;
@@ -370,9 +360,10 @@ namespace MyHomeWork
             this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResult.Font = new System.Drawing.Font("微軟正黑體", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblResult.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblResult.Location = new System.Drawing.Point(255, 332);
+            this.lblResult.Location = new System.Drawing.Point(438, 533);
+            this.lblResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(150, 28);
+            this.lblResult.Size = new System.Drawing.Size(226, 42);
             this.lblResult.TabIndex = 94;
             this.lblResult.Text = "結果共 XXX 筆";
             // 
@@ -391,9 +382,10 @@ namespace MyHomeWork
             // 
             // FrmProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 397);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1096, 596);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnProductName);
             this.Controls.Add(this.dataGridView1);
@@ -410,7 +402,6 @@ namespace MyHomeWork
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPriceTop);
             this.Controls.Add(this.txtPriceBottom);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmProducts";
             this.Text = "FrmProducts";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();

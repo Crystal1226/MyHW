@@ -22,7 +22,8 @@ namespace MyHW
         {
             this.Validate();
             this.photoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.myAlbumDataSet);
+            this.tableAdapterManager.UpdateAll(myAlbumDataSet);
+            //this.photoTableAdapter.Update(myAlbumDataSet.Photo);
         }
 
         private void FrmToolCRUD_Load(object sender, EventArgs e)

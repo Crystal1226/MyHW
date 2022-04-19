@@ -78,7 +78,7 @@ namespace MyHW
             // 
             photoIDLabel.AutoSize = true;
             photoIDLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            photoIDLabel.Location = new System.Drawing.Point(608, 88);
+            photoIDLabel.Location = new System.Drawing.Point(599, 80);
             photoIDLabel.Name = "photoIDLabel";
             photoIDLabel.Size = new System.Drawing.Size(100, 22);
             photoIDLabel.TabIndex = 8;
@@ -88,7 +88,7 @@ namespace MyHW
             // 
             photoLabel.AutoSize = true;
             photoLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            photoLabel.Location = new System.Drawing.Point(608, 120);
+            photoLabel.Location = new System.Drawing.Point(599, 111);
             photoLabel.Name = "photoLabel";
             photoLabel.Size = new System.Drawing.Size(70, 22);
             photoLabel.TabIndex = 10;
@@ -98,7 +98,7 @@ namespace MyHW
             // 
             cityIDLabel.AutoSize = true;
             cityIDLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cityIDLabel.Location = new System.Drawing.Point(608, 371);
+            cityIDLabel.Location = new System.Drawing.Point(599, 492);
             cityIDLabel.Name = "cityIDLabel";
             cityIDLabel.Size = new System.Drawing.Size(90, 22);
             cityIDLabel.TabIndex = 12;
@@ -132,7 +132,7 @@ namespace MyHW
             this.photoBindingNavigator.Name = "photoBindingNavigator";
             this.photoBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.photoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.photoBindingNavigator.Size = new System.Drawing.Size(1101, 33);
+            this.photoBindingNavigator.Size = new System.Drawing.Size(1199, 33);
             this.photoBindingNavigator.TabIndex = 0;
             this.photoBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -198,7 +198,6 @@ namespace MyHW
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 30);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -244,6 +243,7 @@ namespace MyHW
             // photoDataGridView
             // 
             this.photoDataGridView.AutoGenerateColumns = false;
+            this.photoDataGridView.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,7 +266,7 @@ namespace MyHW
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.photoDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.photoDataGridView.Location = new System.Drawing.Point(41, 81);
+            this.photoDataGridView.Location = new System.Drawing.Point(35, 75);
             this.photoDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.photoDataGridView.Name = "photoDataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -277,53 +277,60 @@ namespace MyHW
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.photoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.photoDataGridView.RowHeadersWidth = 62;
-            this.photoDataGridView.RowTemplate.Height = 24;
-            this.photoDataGridView.Size = new System.Drawing.Size(513, 330);
+            this.photoDataGridView.RowHeadersVisible = false;
+            this.photoDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.photoDataGridView.RowTemplate.Height = 80;
+            this.photoDataGridView.ShowCellErrors = false;
+            this.photoDataGridView.Size = new System.Drawing.Size(546, 448);
             this.photoDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "PhotoID";
+            this.dataGridViewTextBoxColumn1.FillWeight = 153.4091F;
             this.dataGridViewTextBoxColumn1.HeaderText = "PhotoID";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.dataGridViewTextBoxColumn1.Width = 90;
             // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "Photo";
+            this.dataGridViewImageColumn1.FillWeight = 65.95363F;
             this.dataGridViewImageColumn1.HeaderText = "Photo";
             this.dataGridViewImageColumn1.MinimumWidth = 8;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 150;
+            this.dataGridViewImageColumn1.Width = 368;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "CityID";
+            this.dataGridViewTextBoxColumn2.FillWeight = 80.63728F;
             this.dataGridViewTextBoxColumn2.HeaderText = "CityID";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.dataGridViewTextBoxColumn2.Width = 90;
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowse.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(897, 371);
+            this.btnBrowse.AutoSize = true;
+            this.btnBrowse.BackColor = System.Drawing.Color.Lavender;
+            this.btnBrowse.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnBrowse.Location = new System.Drawing.Point(978, 492);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(143, 40);
+            this.btnBrowse.Size = new System.Drawing.Size(181, 37);
             this.btnBrowse.TabIndex = 8;
-            this.btnBrowse.Text = "Browse...";
-            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Text = "Insert Photo...";
+            this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // photoIDTextBox
             // 
             this.photoIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.photoBindingSource, "PhotoID", true));
             this.photoIDTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.photoIDTextBox.Location = new System.Drawing.Point(714, 85);
+            this.photoIDTextBox.Location = new System.Drawing.Point(705, 77);
             this.photoIDTextBox.Name = "photoIDTextBox";
             this.photoIDTextBox.Size = new System.Drawing.Size(157, 29);
             this.photoIDTextBox.TabIndex = 9;
@@ -331,9 +338,9 @@ namespace MyHW
             // photoPictureBox
             // 
             this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.photoBindingSource, "Photo", true));
-            this.photoPictureBox.Location = new System.Drawing.Point(714, 131);
+            this.photoPictureBox.Location = new System.Drawing.Point(675, 125);
             this.photoPictureBox.Name = "photoPictureBox";
-            this.photoPictureBox.Size = new System.Drawing.Size(326, 224);
+            this.photoPictureBox.Size = new System.Drawing.Size(484, 352);
             this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.photoPictureBox.TabIndex = 11;
             this.photoPictureBox.TabStop = false;
@@ -342,7 +349,7 @@ namespace MyHW
             // 
             this.cityIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.photoBindingSource, "CityID", true));
             this.cityIDTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityIDTextBox.Location = new System.Drawing.Point(714, 368);
+            this.cityIDTextBox.Location = new System.Drawing.Point(705, 489);
             this.cityIDTextBox.Name = "cityIDTextBox";
             this.cityIDTextBox.Size = new System.Drawing.Size(100, 29);
             this.cityIDTextBox.TabIndex = 13;
@@ -366,7 +373,8 @@ namespace MyHW
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 479);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1199, 583);
             this.Controls.Add(photoIDLabel);
             this.Controls.Add(this.photoIDTextBox);
             this.Controls.Add(photoLabel);
@@ -412,13 +420,13 @@ namespace MyHW
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton photoBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView photoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox photoIDTextBox;
         private System.Windows.Forms.PictureBox photoPictureBox;
         private System.Windows.Forms.TextBox cityIDTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
