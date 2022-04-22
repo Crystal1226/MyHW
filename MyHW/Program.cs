@@ -23,7 +23,7 @@ namespace MyHW
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogon());
+            Application.Run(new FrmQuiz());
         }
     }
 }

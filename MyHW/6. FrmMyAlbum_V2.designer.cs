@@ -74,9 +74,10 @@ namespace MyHW
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1444, 638);
+            this.tabPage3.Size = new System.Drawing.Size(688, 273);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tool";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -86,16 +87,16 @@ namespace MyHW
             this.flowLayoutPanel3.AutoScroll = true;
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1436, 428);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(682, 180);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // btnFolder
             // 
-            this.btnFolder.Location = new System.Drawing.Point(82, 70);
-            this.btnFolder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFolder.Location = new System.Drawing.Point(55, 47);
             this.btnFolder.Name = "btnFolder";
-            this.btnFolder.Size = new System.Drawing.Size(138, 34);
+            this.btnFolder.Size = new System.Drawing.Size(92, 23);
             this.btnFolder.TabIndex = 3;
             this.btnFolder.Text = "Folder...";
             this.btnFolder.UseVisualStyleBackColor = true;
@@ -105,27 +106,28 @@ namespace MyHW
             this.lblDrag.AutoSize = true;
             this.lblDrag.Font = new System.Drawing.Font("新細明體", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDrag.ForeColor = System.Drawing.Color.Red;
-            this.lblDrag.Location = new System.Drawing.Point(261, 27);
-            this.lblDrag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDrag.Location = new System.Drawing.Point(174, 18);
             this.lblDrag.Name = "lblDrag";
-            this.lblDrag.Size = new System.Drawing.Size(285, 32);
+            this.lblDrag.Size = new System.Drawing.Size(195, 21);
             this.lblDrag.TabIndex = 2;
             this.lblDrag.Text = "Drag Drop Pictures  ";
             // 
             // cmbCity
             // 
             this.cmbCity.FormattingEnabled = true;
-            this.cmbCity.Location = new System.Drawing.Point(84, 28);
+            this.cmbCity.Location = new System.Drawing.Point(56, 19);
+            this.cmbCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Size = new System.Drawing.Size(136, 26);
+            this.cmbCity.Size = new System.Drawing.Size(92, 20);
             this.cmbCity.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 33);
+            this.label2.Location = new System.Drawing.Point(7, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 18);
+            this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 0;
             this.label2.Text = "城市";
             // 
@@ -133,7 +135,8 @@ namespace MyHW
             // 
             this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Location = new System.Drawing.Point(2, 2);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -147,8 +150,9 @@ namespace MyHW
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel3);
-            this.splitContainer3.Size = new System.Drawing.Size(1438, 632);
-            this.splitContainer3.SplitterDistance = 198;
+            this.splitContainer3.Size = new System.Drawing.Size(684, 269);
+            this.splitContainer3.SplitterDistance = 84;
+            this.splitContainer3.SplitterWidth = 3;
             this.splitContainer3.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -156,9 +160,8 @@ namespace MyHW
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(785, 409);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(520, 266);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel2
@@ -167,17 +170,15 @@ namespace MyHW
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(235, 409);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(155, 266);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // splitContainer2
             // 
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer2.Location = new System.Drawing.Point(2, 2);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -187,18 +188,18 @@ namespace MyHW
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(1030, 411);
-            this.splitContainer2.SplitterDistance = 237;
-            this.splitContainer2.SplitterWidth = 6;
+            this.splitContainer2.Size = new System.Drawing.Size(683, 268);
+            this.splitContainer2.SplitterDistance = 157;
             this.splitContainer2.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1036, 417);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(687, 272);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "瀏覽相片";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -210,18 +211,20 @@ namespace MyHW
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1044, 449);
+            this.tabControl1.Size = new System.Drawing.Size(695, 298);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1444, 638);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(688, 273);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "新增相片管理";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -231,10 +234,9 @@ namespace MyHW
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(947, 124);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(630, 83);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(80, 18);
+            this.linkLabel1.Size = new System.Drawing.Size(53, 12);
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "相片管理";
@@ -244,8 +246,9 @@ namespace MyHW
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1044, 97);
+            this.label1.Size = new System.Drawing.Size(695, 63);
             this.label1.TabIndex = 1;
             this.label1.Text = "My Album";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -255,7 +258,6 @@ namespace MyHW
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -267,9 +269,8 @@ namespace MyHW
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1048, 560);
-            this.splitContainer1.SplitterDistance = 101;
-            this.splitContainer1.SplitterWidth = 6;
+            this.splitContainer1.Size = new System.Drawing.Size(699, 373);
+            this.splitContainer1.SplitterDistance = 67;
             this.splitContainer1.TabIndex = 1;
             // 
             // photoTableAdapter1
@@ -292,10 +293,11 @@ namespace MyHW
             // 
             // FrmMyAlbum_V2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 560);
+            this.ClientSize = new System.Drawing.Size(699, 373);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmMyAlbum_V2";
             this.Text = "FrmMyAlbum_V1";
             this.splitContainer3.Panel1.ResumeLayout(false);
