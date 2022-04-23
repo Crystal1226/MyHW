@@ -141,7 +141,7 @@ namespace MyHW
             // 
             // btnAlbum
             // 
-            this.btnAlbum.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAlbum.BackColor = System.Drawing.Color.Azure;
             this.btnAlbum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAlbum.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnAlbum.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -325,7 +325,7 @@ namespace MyHW
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer3.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.splitContainer3.Panel2.Controls.Add(this.btnTool);
             this.splitContainer3.Size = new System.Drawing.Size(954, 533);

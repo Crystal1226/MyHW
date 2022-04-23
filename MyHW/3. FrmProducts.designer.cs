@@ -220,6 +220,7 @@ namespace MyHomeWork
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 30);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -358,12 +359,12 @@ namespace MyHomeWork
             this.lblResult.AutoSize = true;
             this.lblResult.BackColor = System.Drawing.Color.White;
             this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblResult.Font = new System.Drawing.Font("微軟正黑體", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblResult.Font = new System.Drawing.Font("Segoe UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResult.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblResult.Location = new System.Drawing.Point(438, 533);
             this.lblResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(226, 42);
+            this.lblResult.Size = new System.Drawing.Size(239, 47);
             this.lblResult.TabIndex = 94;
             this.lblResult.Text = "結果共 XXX 筆";
             // 

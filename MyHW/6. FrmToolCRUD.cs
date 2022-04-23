@@ -28,7 +28,6 @@ namespace MyHW
 
         private void FrmToolCRUD_Load(object sender, EventArgs e)
         {
-            // TODO: 這行程式碼會將資料載入 'myAlbumDataSet.Photo' 資料表。您可以視需要進行移動或移除。
             this.photoTableAdapter.Fill(this.myAlbumDataSet.Photo);
         }
 

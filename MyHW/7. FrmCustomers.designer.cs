@@ -52,7 +52,7 @@ namespace MyHW
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 23);
+            this.comboBox1.Location = new System.Drawing.Point(118, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(190, 30);
             this.comboBox1.TabIndex = 4;
@@ -61,7 +61,7 @@ namespace MyHW
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Location = new System.Drawing.Point(22, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 22);
             this.label1.TabIndex = 2;
@@ -73,9 +73,9 @@ namespace MyHW
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.HideSelection = false;
             this.listView1.LargeImageList = this.ImageList2;
-            this.listView1.Location = new System.Drawing.Point(0, 78);
+            this.listView1.Location = new System.Drawing.Point(0, 99);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1002, 459);
+            this.listView1.Size = new System.Drawing.Size(1137, 511);
             this.listView1.SmallImageList = this.ImageList1;
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -210,7 +210,8 @@ namespace MyHW
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 537);
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.ClientSize = new System.Drawing.Size(1137, 610);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);

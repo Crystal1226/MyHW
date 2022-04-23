@@ -17,12 +17,13 @@ namespace MyHomeWork
             InitializeComponent();
             this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
             this.dataGridView1.DataSource = nwDataSet1.Products;
+            Binding();
+        }
 
-            //Binding Source
+        private void Binding()
+        {
             this.bindingSource1.DataSource = this.nwDataSet1.Products;
             this.dataGridView1.DataSource = this.bindingSource1;
-
-            //Binding Navigator
             this.bindingNavigator1.BindingSource = this.bindingSource1;
         }
 
@@ -31,7 +32,8 @@ namespace MyHomeWork
             this.productsTableAdapter1.FillByUnitPrice(this.nwDataSet1.Products,
                 int.Parse(txtPriceBottom.Text), int.Parse(txtPriceTop.Text));
             this.dataGridView1.DataSource = nwDataSet1.Products;
-            
+            Binding();
+
             this.lblResult.Text = "結果共" + this.bindingSource1.Count+ "筆";
         }
 
@@ -39,6 +41,7 @@ namespace MyHomeWork
         {
             this.productsTableAdapter1.FillByProductName(this.nwDataSet1.Products, txtProductName.Text);
             this.dataGridView1.DataSource = nwDataSet1.Products;
+            Binding();
 
             this.lblResult.Text = "結果共" + this.bindingSource1.Count+ "筆";
         }

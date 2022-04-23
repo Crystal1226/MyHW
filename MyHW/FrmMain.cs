@@ -65,8 +65,7 @@ namespace MyHW
 
         private void btnQuiz_Click(object sender, EventArgs e)
         {
-            FrmQuiz f = new FrmQuiz();
-            ShowFrm(f);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
