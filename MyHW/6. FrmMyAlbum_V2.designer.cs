@@ -82,7 +82,7 @@ namespace MyHW
             this.flpCityPic2.Location = new System.Drawing.Point(0, 0);
             this.flpCityPic2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpCityPic2.Name = "flpCityPic2";
-            this.flpCityPic2.Size = new System.Drawing.Size(1144, 446);
+            this.flpCityPic2.Size = new System.Drawing.Size(1144, 442);
             this.flpCityPic2.TabIndex = 0;
             // 
             // btnFolder
@@ -146,8 +146,8 @@ namespace MyHW
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.flpCityPic2);
-            this.splitContainer3.Size = new System.Drawing.Size(1146, 611);
-            this.splitContainer3.SplitterDistance = 157;
+            this.splitContainer3.Size = new System.Drawing.Size(1146, 605);
+            this.splitContainer3.SplitterDistance = 155;
             this.splitContainer3.SplitterWidth = 6;
             this.splitContainer3.TabIndex = 2;
             // 
@@ -209,11 +209,11 @@ namespace MyHW
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1152, 619);
+            this.tabPage2.Size = new System.Drawing.Size(1152, 613);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "新增相片管理";
             this.tabPage2.UseVisualStyleBackColor = true;

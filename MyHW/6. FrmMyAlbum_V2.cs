@@ -32,49 +32,54 @@ namespace MyHW
         {
             //新增相片管理 - DragDrop
             #region
-            PictureBox pic = new PictureBox();
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop); //取得Drop檔案的資料
-            for(int i=0; i <= files.Length - 1; i++)
-            {
-                pic.Image = Image.FromFile(files[i]);
-                pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                pic.Width = 240;
-                pic.Height = 160;
-
-                flpCityPic2.Controls.Add(pic);
-            }
-
-            //Insert to DB
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = @"(LocalDB)\MSSQLLocalDB";
             builder.AttachDBFilename = Application.StartupPath + @"\MyAlbum.mdf";
             builder.IntegratedSecurity = true;
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"Insert into Photo_V2 (Photo, CityID, Date) values (@Photo, @CityID, @Date)";
-                cmd.Connection = conn;
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop); //取得Drop檔案的資料
+                for (int i = 0; i <= files.Length - 1; i++)
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = $"Insert into Photo_V2 (Photo, CityID, Date) values (@Photo, @CityID, @Date)";
+                    cmd.Connection = conn;
 
-                byte[] bytes;
-                MemoryStream ms = new MemoryStream();
-                pic.Image.Save(ms, ImageFormat.Jpeg); //Pic存進資料流
-                bytes = ms.GetBuffer(); //建立資料流陣列
-                cmd.Parameters.Add("@Photo", SqlDbType.Image).Value = bytes;
-                cmd.Parameters.Add("@Date", SqlDbType.Date).Value = DateTime.Now;
-                if (cmbCity.Text == "Seoul") //ToDo try a better method-connecting table "City" to insert CityID
-                {
-                    cmd.Parameters.Add("@CityID", SqlDbType.Int).Value =1;
+                    //建立PictureBox
+                    PictureBox pic = new PictureBox();
+                    pic.Image = Image.FromFile(files[i]);
+                    pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pic.Width = 240;
+                    pic.Height = 160;
+                    flpCityPic2.Controls.Add(pic);
+
+                    //建立MemoryStream - 將pic存入
+                    MemoryStream ms = new MemoryStream();
+                    pic.Image.Save(ms, ImageFormat.Jpeg);
+
+                    //將MemoryStream資料存入byte陣列
+                    byte[] bytes;
+                    bytes = ms.GetBuffer();
+
+                    //Insert to DB
+                    cmd.Parameters.Add("@Photo", SqlDbType.Image).Value = bytes;
+                    cmd.Parameters.Add("@Date", SqlDbType.Date).Value = DateTime.Now;
+                    if (cmbCity.Text == "Seoul") //ToDo try better method-connecting table "City" to insert CityID
+                    {
+                        cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 1;
+                    }
+                    else if (cmbCity.Text == "LosAngeles")
+                    {
+                        cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 2;
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 3;
+                    }
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
                 }
-                else if (cmbCity.Text == "LosAngeles")
-                {
-                    cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 2;
-                }
-                else
-                {
-                    cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 3;
-                }
-                conn.Open();
-                cmd.ExecuteNonQuery();
                 #endregion
             }
         }
@@ -238,15 +243,66 @@ namespace MyHW
         private void btnFolder_Click(object sender, EventArgs e)
         {
             //Folder...
+            #region
             DialogResult result = folderBrowserDialog1.ShowDialog();
             folderBrowserDialog1.RootFolder = Environment.SpecialFolder.Desktop;
             folderBrowserDialog1.ShowNewFolderButton = true;
 
             if (result == DialogResult.OK)
             {
-                //ToDo insert to DB from folder
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = @"(LocalDB)\MSSQLLocalDB";
+                builder.AttachDBFilename = Application.StartupPath + @"\MyAlbum.mdf";
+                builder.IntegratedSecurity = true;
+                using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+                {
+                    string[] files = Directory.GetFiles(folderBrowserDialog1.SelectedPath); //取得Folder中的資料
+                    for (int i = 0; i <= files.Length - 1; i++) //加入每張pic為picBox & insert to DB
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = $"Insert into Photo_V2 (Photo, CityID, Date) values (@Photo, @CityID, @Date)";
+                        cmd.Connection = conn;
+
+                        //建立PictureBox
+                        PictureBox pic = new PictureBox();
+                        pic.Image = Image.FromFile(files[i]);
+                        pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pic.Width = 240;
+                        pic.Height = 160;
+                        flpCityPic2.Controls.Add(pic);
+
+                        
+                        //建立MemoryStream - 將pic存入
+                        MemoryStream ms = new MemoryStream();
+                        pic.Image.Save(ms, ImageFormat.Jpeg); //Pic存進資料流
+
+                        //將MemoryStream資料存入byte陣列
+                        byte[] bytes;
+                        bytes = ms.GetBuffer();
+
+                        //Insert to DB
+                        cmd.Parameters.Add("@Photo", SqlDbType.Image).Value = bytes;
+                        cmd.Parameters.Add("@Date", SqlDbType.Date).Value = DateTime.Now;
+                        if (cmbCity.Text == "Seoul")
+                        {
+                            cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 1;
+                        }
+                        else if (cmbCity.Text == "LosAngeles")
+                        {
+                            cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 2;
+                        }
+                        else
+                        {
+                            cmd.Parameters.Add("@CityID", SqlDbType.Int).Value = 3;
+                        }
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                }
             }
-            else {}
+            else { }
+            #endregion
         }
     }
 }
