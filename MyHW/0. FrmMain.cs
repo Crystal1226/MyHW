@@ -51,12 +51,6 @@ namespace MyHW
             ShowFrm(f);
         }
 
-        private void btnPhoto_Click(object sender, EventArgs e)
-        {
-            FrmMyAlbum_V1 f = new FrmMyAlbum_V1();
-            ShowFrm(f);
-        }
-
         private void btnPractice_Click(object sender, EventArgs e)
         {
             FrmHomeWork f = new FrmHomeWork();
@@ -72,6 +66,12 @@ namespace MyHW
         private void button1_Click(object sender, EventArgs e)
         {
             FrmProducts f = new FrmProducts();
+            ShowFrm(f);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmMyAlbum_V2 f = new FrmMyAlbum_V2();
             ShowFrm(f);
         }
     }

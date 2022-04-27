@@ -110,6 +110,12 @@
     <Compile Include="6. FrmMyAlbum_V2.designer.cs">
       <DependentUpon>6. FrmMyAlbum_V2.cs</DependentUpon>
     </Compile>
+    <Compile Include="6. FrmPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6. FrmPicture.designer.cs">
+      <DependentUpon>6. FrmPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="7. FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6. FrmMyAlbum_V2.resx">
       <DependentUpon>6. FrmMyAlbum_V2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6. FrmPicture.resx">
+      <DependentUpon>6. FrmPicture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="6. FrmToolCRUD.resx">
       <DependentUpon>6. FrmToolCRUD.cs</DependentUpon>

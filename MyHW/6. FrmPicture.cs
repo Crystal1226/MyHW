@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace MyHW
 {
-    public partial class Form1 : Form
+    public partial class FrmPicture : Form
     {
-        public Form1()
+        public FrmPicture()
         {
             InitializeComponent();
+            photo_V2TableAdapter1.Fill(myAlbumDataSet1.Photo_V2);
+            
         }
+
     }
 }
